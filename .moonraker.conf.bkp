@@ -82,15 +82,6 @@ managed_services = klipper
 primary_branch = main
 install_script = install.sh
 
-[update_manager KlipperScreen]
-type = git_repo
-path = ~/KlipperScreen
-origin = https://github.com/moggieuk/KlipperScreen-Happy-Hare-Edition.git
-virtualenv = ~/.KlipperScreen-env
-requirements = scripts/KlipperScreen-requirements.txt
-system_dependencies = scripts/system-dependencies.json
-managed_services = KlipperScreen
-
 [update_manager happy-hare]
 type = git_repo
 path = ~/Happy-Hare
@@ -107,4 +98,13 @@ type = git_repo
 path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
+
+[update_manager KlipperScreen]
+type = git_repo
+path = /home/biqu/KlipperScreen
+origin = https://github.com/moggieuk/KlipperScreen-Happy-Hare-Edition.git
+env = /home/biqu/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
+managed_services = KlipperScreen
 

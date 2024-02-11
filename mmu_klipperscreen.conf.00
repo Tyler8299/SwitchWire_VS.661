@@ -344,7 +344,7 @@ refresh_on: printer.mmu.endless_spool
 name: {{ gettext('Disable LED') }}
 icon: mmu_led_disable
 method: printer.gcode.script
-params: {"script":"MMU_LED ENABLE=0 QUIET=1"}
+params: {"script":"MMU_LED ENABLE=0"}
 enable: {{ printer.mmu.enabled == 1 and not printer.mmu.print_state == "standby" }}
 show_disabled: True
 refresh_on: printer.mmu.enabled, printer.mmu.print_state
@@ -353,7 +353,7 @@ refresh_on: printer.mmu.enabled, printer.mmu.print_state
 name: {{ gettext('LED Gate Status') }}
 icon: mmu_led_gate_status
 method: printer.gcode.script
-params: {"script":"MMU_LED ENABLE=1 EXIT_EFFECT=gate_status QUIET=1"}
+params: {"script":"MMU_LED ENABLE=1 EFFECT=gate_status"}
 enable: {{ printer.mmu.enabled == 1 and not printer.mmu.print_state == "standby" }}
 show_disabled: True
 refresh_on: printer.mmu.enabled, printer.mmu.print_state
@@ -362,7 +362,7 @@ refresh_on: printer.mmu.enabled, printer.mmu.print_state
 name: {{ gettext('LED Fil. Color') }}
 icon: mmu_led_filament_color
 method: printer.gcode.script
-params: {"script":"MMU_LED ENABLE=1 EXIT_EFFECT=filament_color QUIET=1"}
+params: {"script":"MMU_LED ENABLE=1 EFFECT=filament_color"}
 enable: {{ printer.mmu.enabled == 1 and not printer.mmu.print_state == "standby" }}
 show_disabled: True
 refresh_on: printer.mmu.enabled, printer.mmu.print_state
